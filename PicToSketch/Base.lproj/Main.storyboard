@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" title="View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="PicToSketch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSP-68-tII">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-qB-slY" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture to Sketch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-Pw-7XV" userLabel="Title Label">
+                                                <rect key="frame" x="102" y="80" width="189" height="31.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-R8-cA1" userLabel="Image Stack View">
+                                                <rect key="frame" x="20" y="191.33333333333337" width="353" height="250"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picExample.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="K24-ve-sEh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166" height="250"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sketchExample.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="PJe-S3-MIP">
+                                                        <rect key="frame" x="187" y="0.0" width="166" height="250"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="gqa-Ot-cRw"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="76J-fa-pmu" userLabel="Button Stack View">
+                                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="270-kP-53v" userLabel="photoLibraryButton" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
+                                                        <color key="backgroundColor" name="ButtonColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="사진 보관함">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="photoLibraryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8b3-eT-Xyf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODg-jZ-OEb" userLabel="cameraButton" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
+                                                        <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
+                                                        <color key="backgroundColor" name="ButtonColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="사진 찍기">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jOC-G9-BB2"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="Y9k-Rn-Xn6"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="gZm-R8-cA1" firstAttribute="top" secondItem="nBA-Pw-7XV" secondAttribute="bottom" constant="80" id="5em-qI-nD9"/>
+                                            <constraint firstItem="76J-fa-pmu" firstAttribute="centerX" secondItem="QRE-qB-slY" secondAttribute="centerX" id="AzU-YI-oB8"/>
+                                            <constraint firstItem="nBA-Pw-7XV" firstAttribute="top" secondItem="QRE-qB-slY" secondAttribute="top" constant="80" id="QRW-N8-GfW"/>
+                                            <constraint firstItem="76J-fa-pmu" firstAttribute="leading" secondItem="gZm-R8-cA1" secondAttribute="leading" id="Tdp-2c-jEj"/>
+                                            <constraint firstAttribute="bottom" secondItem="76J-fa-pmu" secondAttribute="bottom" constant="142.66666666666663" id="Tra-Lg-9vw"/>
+                                            <constraint firstItem="nBA-Pw-7XV" firstAttribute="centerX" secondItem="QRE-qB-slY" secondAttribute="centerX" id="YTe-kP-Jdk"/>
+                                            <constraint firstItem="76J-fa-pmu" firstAttribute="top" secondItem="gZm-R8-cA1" secondAttribute="bottom" constant="120" id="ert-Mh-gv0"/>
+                                            <constraint firstItem="gZm-R8-cA1" firstAttribute="leading" secondItem="QRE-qB-slY" secondAttribute="leading" constant="20" id="r8z-gQ-llu"/>
+                                            <constraint firstItem="gZm-R8-cA1" firstAttribute="centerX" secondItem="QRE-qB-slY" secondAttribute="centerX" id="z1c-mx-dGY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="QRE-qB-slY" firstAttribute="trailing" secondItem="6zc-VW-1i0" secondAttribute="trailing" id="4wK-ke-7jm"/>
+                                    <constraint firstItem="QRE-qB-slY" firstAttribute="width" secondItem="S77-XY-VMs" secondAttribute="width" id="5af-Fu-ljp"/>
+                                    <constraint firstItem="QRE-qB-slY" firstAttribute="top" secondItem="6zc-VW-1i0" secondAttribute="top" id="WP8-DK-KDD"/>
+                                    <constraint firstItem="QRE-qB-slY" firstAttribute="leading" secondItem="6zc-VW-1i0" secondAttribute="leading" id="Zjt-dM-hAP"/>
+                                    <constraint firstItem="QRE-qB-slY" firstAttribute="bottom" secondItem="6zc-VW-1i0" secondAttribute="bottom" id="hai-Qe-tlu"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6zc-VW-1i0"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="S77-XY-VMs"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RSP-68-tII" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BQb-ad-Vz7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="RSP-68-tII" secondAttribute="top" id="XWm-At-eJB"/>
+                            <constraint firstItem="RSP-68-tII" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gaP-zC-P68"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="RSP-68-tII" secondAttribute="leading" id="iFW-WJ-Wvw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="K24-ve-sEh" id="gON-dY-aJD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-37.404580152671755" y="3.5211267605633805"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="R49-rP-Zrn">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" title="Result View Controller" id="M7l-3w-z72" userLabel="Result View Controller" customClass="ResultViewController" customModule="PicToSketch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WcN-1N-ris">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMG-Mg-RuA">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEm-3X-SoU" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="722"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변환 이미지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxa-Nj-Fwb">
+                                                <rect key="frame" x="128.33333333333331" y="55" width="136.33333333333331" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ov8-cG-z8p" userLabel="resultImageView">
+                                                <rect key="frame" x="20" y="111" width="353" height="500"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="500" id="XvK-zP-ErL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i1E-YV-1Np" userLabel="ButtonStackView">
+                                                <rect key="frame" x="20" y="631" width="353" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUT-x6-Dat" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
+                                                        <color key="backgroundColor" name="ButtonColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="나가기">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="exitButton:" destination="M7l-3w-z72" eventType="touchUpInside" id="Dvl-sL-D9i"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ6-Ls-Wau" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
+                                                        <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
+                                                        <color key="backgroundColor" name="ButtonColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="저장">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="saveImageButton:" destination="M7l-3w-z72" eventType="touchUpInside" id="ekN-cv-V3b"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="A7n-4E-oOA"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="i1E-YV-1Np" firstAttribute="top" secondItem="Ov8-cG-z8p" secondAttribute="bottom" constant="20" id="4rW-cS-Ogb"/>
+                                            <constraint firstItem="Hxa-Nj-Fwb" firstAttribute="top" secondItem="QEm-3X-SoU" secondAttribute="top" constant="55" id="CGw-dm-hdA"/>
+                                            <constraint firstItem="Hxa-Nj-Fwb" firstAttribute="centerX" secondItem="QEm-3X-SoU" secondAttribute="centerX" id="Qvl-Of-jCl"/>
+                                            <constraint firstItem="i1E-YV-1Np" firstAttribute="centerX" secondItem="Ov8-cG-z8p" secondAttribute="centerX" id="UnD-Ps-8vx"/>
+                                            <constraint firstItem="Ov8-cG-z8p" firstAttribute="leading" secondItem="QEm-3X-SoU" secondAttribute="leading" constant="20" id="Y51-97-sSq"/>
+                                            <constraint firstItem="Ov8-cG-z8p" firstAttribute="centerY" secondItem="QEm-3X-SoU" secondAttribute="centerY" id="bmN-7n-RFB"/>
+                                            <constraint firstItem="i1E-YV-1Np" firstAttribute="leading" secondItem="Ov8-cG-z8p" secondAttribute="leading" id="bwn-zE-c7g"/>
+                                            <constraint firstItem="Ov8-cG-z8p" firstAttribute="centerX" secondItem="Hxa-Nj-Fwb" secondAttribute="centerX" id="fvS-Gi-lr4"/>
+                                            <constraint firstItem="Ov8-cG-z8p" firstAttribute="top" secondItem="Hxa-Nj-Fwb" secondAttribute="bottom" constant="20" id="npi-6b-evM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QEm-3X-SoU" firstAttribute="trailing" secondItem="eFc-El-mrS" secondAttribute="trailing" id="BdH-5u-qjE"/>
+                                    <constraint firstItem="QEm-3X-SoU" firstAttribute="width" secondItem="ogH-rO-6uV" secondAttribute="width" id="GOm-cm-9lq"/>
+                                    <constraint firstItem="QEm-3X-SoU" firstAttribute="bottom" secondItem="eFc-El-mrS" secondAttribute="bottom" id="dqA-Q1-KuA"/>
+                                    <constraint firstItem="QEm-3X-SoU" firstAttribute="top" secondItem="eFc-El-mrS" secondAttribute="top" id="ggB-gW-nYj"/>
+                                    <constraint firstItem="QEm-3X-SoU" firstAttribute="leading" secondItem="eFc-El-mrS" secondAttribute="leading" id="yMd-A4-yfd"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="eFc-El-mrS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ogH-rO-6uV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="epj-NT-Hga"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="epj-NT-Hga" firstAttribute="bottom" secondItem="xMG-Mg-RuA" secondAttribute="bottom" id="fdp-gJ-8pU"/>
+                            <constraint firstItem="xMG-Mg-RuA" firstAttribute="leading" secondItem="epj-NT-Hga" secondAttribute="leading" id="ir0-9M-McR"/>
+                            <constraint firstItem="xMG-Mg-RuA" firstAttribute="top" secondItem="epj-NT-Hga" secondAttribute="top" id="svU-2v-6vg"/>
+                            <constraint firstItem="epj-NT-Hga" firstAttribute="trailing" secondItem="xMG-Mg-RuA" secondAttribute="trailing" id="wE7-yQ-Y2T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dc6-T2-CwJ"/>
+                    <connections>
+                        <outlet property="resultImageView" destination="Ov8-cG-z8p" id="SGd-CF-5RS"/>
+                        <outlet property="resultLabel" destination="Hxa-Nj-Fwb" id="ymI-KC-91N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YT5-9k-gqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.70229007633588" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="picExample.jpeg" width="1400" height="1750"/>
+        <image name="sketchExample.jpeg" width="1400" height="1750"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButtonColor">
+            <color red="0.33300000429153442" green="0.33300000429153442" blue="0.33300000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
