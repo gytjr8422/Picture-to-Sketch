@@ -17,7 +17,24 @@
 		CE1A9FE7291A47190096AF96 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A9FE6291A47190096AF96 /* CustomButton.swift */; };
 		CE1A9FEB291BAE870096AF96 /* picExample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE1A9FE9291BAE870096AF96 /* picExample.jpeg */; };
 		CE1A9FEC291BAE870096AF96 /* sketchExample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE1A9FEA291BAE870096AF96 /* sketchExample.jpeg */; };
+		CE35B00D292BEFE100E5F0DA /* picExample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE35B00B292BEFE000E5F0DA /* picExample2.jpg */; };
+		CE35B00E292BEFE100E5F0DA /* sketchExample2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE35B00C292BEFE100E5F0DA /* sketchExample2.jpeg */; };
 		CE46484E291E760100EA511C /* MyOpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE46484D291E760100EA511C /* MyOpenCV.mm */; };
+		CE628BD2292B60DC00B6819B /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE628BD1292B60DC00B6819B /* SDMiSaeng.ttf */; };
+		CE628BD7292B6D2A00B6819B /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE628BD3292B6D2A00B6819B /* DancingScript-SemiBold.ttf */; };
+		CE628BD8292B6D2A00B6819B /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE628BD4292B6D2A00B6819B /* DancingScript-Bold.ttf */; };
+		CE628BD9292B6D2A00B6819B /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE628BD5292B6D2A00B6819B /* DancingScript-Regular.ttf */; };
+		CE628BDA292B6D2A00B6819B /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE628BD6292B6D2A00B6819B /* DancingScript-Medium.ttf */; };
+		CE628BDC292B6F8000B6819B /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE628BDB292B6F8000B6819B /* CustomImageView.swift */; };
+		CEC82CC8292BCF95002E0499 /* PictureToSketch.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CC7292BCF95002E0499 /* PictureToSketch.png */; };
+		CEC82CCD292BDCC8002E0499 /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CC9292BDCC7002E0499 /* Caveat-Bold.ttf */; };
+		CEC82CCE292BDCC8002E0499 /* Caveat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CCA292BDCC7002E0499 /* Caveat-SemiBold.ttf */; };
+		CEC82CCF292BDCC8002E0499 /* Caveat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CCB292BDCC7002E0499 /* Caveat-Regular.ttf */; };
+		CEC82CD0292BDCC8002E0499 /* Caveat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CCC292BDCC8002E0499 /* Caveat-Medium.ttf */; };
+		CEC82CD2292BDCD7002E0499 /* Cookie-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CD1292BDCD7002E0499 /* Cookie-Regular.ttf */; };
+		CEC82CD4292BDCE4002E0499 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CD3292BDCE4002E0499 /* BerkshireSwash-Regular.ttf */; };
+		CEC82CD7292BDCF4002E0499 /* Charm-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CD5292BDCF4002E0499 /* Charm-Bold.ttf */; };
+		CEC82CD8292BDCF4002E0499 /* Charm-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC82CD6292BDCF4002E0499 /* Charm-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,11 +51,28 @@
 		CE1A9FE6291A47190096AF96 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CE1A9FE9291BAE870096AF96 /* picExample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picExample.jpeg; sourceTree = "<group>"; };
 		CE1A9FEA291BAE870096AF96 /* sketchExample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sketchExample.jpeg; sourceTree = "<group>"; };
+		CE35B00B292BEFE000E5F0DA /* picExample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picExample2.jpg; sourceTree = "<group>"; };
+		CE35B00C292BEFE100E5F0DA /* sketchExample2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sketchExample2.jpeg; sourceTree = "<group>"; };
 		CE464846291E420900EA511C /* PicToSketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicToSketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE46484C291E760100EA511C /* MyOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOpenCV.h; sourceTree = "<group>"; };
 		CE46484D291E760100EA511C /* MyOpenCV.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MyOpenCV.mm; sourceTree = "<group>"; };
 		CE46484F291E766800EA511C /* PicToSketch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicToSketch-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE464850291E767F00EA511C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CE628BD1292B60DC00B6819B /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDMiSaeng.ttf; sourceTree = "<group>"; };
+		CE628BD3292B6D2A00B6819B /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
+		CE628BD4292B6D2A00B6819B /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		CE628BD5292B6D2A00B6819B /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		CE628BD6292B6D2A00B6819B /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Medium.ttf"; sourceTree = "<group>"; };
+		CE628BDB292B6F8000B6819B /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		CEC82CC7292BCF95002E0499 /* PictureToSketch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PictureToSketch.png; sourceTree = "<group>"; };
+		CEC82CC9292BDCC7002E0499 /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
+		CEC82CCA292BDCC7002E0499 /* Caveat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-SemiBold.ttf"; sourceTree = "<group>"; };
+		CEC82CCB292BDCC7002E0499 /* Caveat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Regular.ttf"; sourceTree = "<group>"; };
+		CEC82CCC292BDCC8002E0499 /* Caveat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Medium.ttf"; sourceTree = "<group>"; };
+		CEC82CD1292BDCD7002E0499 /* Cookie-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cookie-Regular.ttf"; sourceTree = "<group>"; };
+		CEC82CD3292BDCE4002E0499 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
+		CEC82CD5292BDCF4002E0499 /* Charm-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Charm-Bold.ttf"; sourceTree = "<group>"; };
+		CEC82CD6292BDCF4002E0499 /* Charm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Charm-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +119,14 @@
 		CE1A9FD1291A427C0096AF96 /* PicToSketch */ = {
 			isa = PBXGroup;
 			children = (
+				CE628BD0292B60CD00B6819B /* Fonts */,
 				CE1A9FE8291BAE500096AF96 /* Images */,
 				CE1A9FD2291A427C0096AF96 /* AppDelegate.swift */,
 				CE1A9FD4291A427C0096AF96 /* SceneDelegate.swift */,
 				CE1A9FD6291A427C0096AF96 /* ViewController.swift */,
 				CE14EC332922184F009AEAEF /* ResultViewController.swift */,
 				CE1A9FE6291A47190096AF96 /* CustomButton.swift */,
+				CE628BDB292B6F8000B6819B /* CustomImageView.swift */,
 				CE1A9FD8291A427C0096AF96 /* Main.storyboard */,
 				CE1A9FDB291A427E0096AF96 /* Assets.xcassets */,
 				CE1A9FDD291A427E0096AF96 /* LaunchScreen.storyboard */,
@@ -102,10 +138,33 @@
 		CE1A9FE8291BAE500096AF96 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEC82CC7292BCF95002E0499 /* PictureToSketch.png */,
 				CE1A9FE9291BAE870096AF96 /* picExample.jpeg */,
 				CE1A9FEA291BAE870096AF96 /* sketchExample.jpeg */,
+				CE35B00B292BEFE000E5F0DA /* picExample2.jpg */,
+				CE35B00C292BEFE100E5F0DA /* sketchExample2.jpeg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		CE628BD0292B60CD00B6819B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE628BD4292B6D2A00B6819B /* DancingScript-Bold.ttf */,
+				CE628BD6292B6D2A00B6819B /* DancingScript-Medium.ttf */,
+				CE628BD5292B6D2A00B6819B /* DancingScript-Regular.ttf */,
+				CE628BD3292B6D2A00B6819B /* DancingScript-SemiBold.ttf */,
+				CE628BD1292B60DC00B6819B /* SDMiSaeng.ttf */,
+				CEC82CC9292BDCC7002E0499 /* Caveat-Bold.ttf */,
+				CEC82CCC292BDCC8002E0499 /* Caveat-Medium.ttf */,
+				CEC82CCB292BDCC7002E0499 /* Caveat-Regular.ttf */,
+				CEC82CCA292BDCC7002E0499 /* Caveat-SemiBold.ttf */,
+				CEC82CD1292BDCD7002E0499 /* Cookie-Regular.ttf */,
+				CEC82CD3292BDCE4002E0499 /* BerkshireSwash-Regular.ttf */,
+				CEC82CD5292BDCF4002E0499 /* Charm-Bold.ttf */,
+				CEC82CD6292BDCF4002E0499 /* Charm-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +228,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1A9FDF291A427E0096AF96 /* LaunchScreen.storyboard in Resources */,
+				CE628BD8292B6D2A00B6819B /* DancingScript-Bold.ttf in Resources */,
 				CE1A9FDC291A427E0096AF96 /* Assets.xcassets in Resources */,
+				CE628BDA292B6D2A00B6819B /* DancingScript-Medium.ttf in Resources */,
+				CE35B00D292BEFE100E5F0DA /* picExample2.jpg in Resources */,
+				CEC82CCE292BDCC8002E0499 /* Caveat-SemiBold.ttf in Resources */,
+				CE35B00E292BEFE100E5F0DA /* sketchExample2.jpeg in Resources */,
 				CE1A9FDA291A427C0096AF96 /* Main.storyboard in Resources */,
+				CEC82CCD292BDCC8002E0499 /* Caveat-Bold.ttf in Resources */,
+				CEC82CD2292BDCD7002E0499 /* Cookie-Regular.ttf in Resources */,
+				CEC82CCF292BDCC8002E0499 /* Caveat-Regular.ttf in Resources */,
 				CE1A9FEB291BAE870096AF96 /* picExample.jpeg in Resources */,
+				CE628BD2292B60DC00B6819B /* SDMiSaeng.ttf in Resources */,
+				CEC82CD8292BDCF4002E0499 /* Charm-Regular.ttf in Resources */,
 				CE1A9FEC291BAE870096AF96 /* sketchExample.jpeg in Resources */,
+				CEC82CC8292BCF95002E0499 /* PictureToSketch.png in Resources */,
+				CEC82CD7292BDCF4002E0499 /* Charm-Bold.ttf in Resources */,
+				CE628BD7292B6D2A00B6819B /* DancingScript-SemiBold.ttf in Resources */,
+				CE628BD9292B6D2A00B6819B /* DancingScript-Regular.ttf in Resources */,
+				CEC82CD0292BDCC8002E0499 /* Caveat-Medium.ttf in Resources */,
+				CEC82CD4292BDCE4002E0499 /* BerkshireSwash-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +286,7 @@
 				CE1A9FE7291A47190096AF96 /* CustomButton.swift in Sources */,
 				CE1A9FD7291A427C0096AF96 /* ViewController.swift in Sources */,
 				CE1A9FD3291A427C0096AF96 /* AppDelegate.swift in Sources */,
+				CE628BDC292B6F8000B6819B /* CustomImageView.swift in Sources */,
 				CE1A9FD5291A427C0096AF96 /* SceneDelegate.swift in Sources */,
 				CE46484E291E760100EA511C /* MyOpenCV.mm in Sources */,
 				CE14EC342922184F009AEAEF /* ResultViewController.swift in Sources */,
@@ -376,6 +452,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PicToSketch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Picture to Sketch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -412,6 +489,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = PicToSketch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Picture to Sketch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

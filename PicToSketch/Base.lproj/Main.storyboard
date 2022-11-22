@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DancingScript-Regular.ttf">
+            <string>DancingScript-Regular</string>
+        </array>
+        <array key="DancingScript-SemiBold.ttf">
+            <string>DancingScript-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,21 +28,21 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-qB-slY" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="769.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture to Sketch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-Pw-7XV" userLabel="Title Label">
-                                                <rect key="frame" x="102" y="80" width="189" height="31.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <rect key="frame" x="88.666666666666671" y="80" width="215.66666666666663" height="42"/>
+                                                <fontDescription key="fontDescription" name="DancingScript-SemiBold" family="Dancing Script" pointSize="35"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-R8-cA1" userLabel="Image Stack View">
-                                                <rect key="frame" x="20" y="191.33333333333337" width="353" height="250"/>
+                                                <rect key="frame" x="20" y="202" width="353" height="250"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picExample.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="K24-ve-sEh">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picExample2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="K24-ve-sEh" customClass="CustomImageView" customModule="PicToSketch" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="166" height="250"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sketchExample.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="PJe-S3-MIP">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sketchExample2.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="PJe-S3-MIP" customClass="CustomImageView" customModule="PicToSketch" customModuleProvider="target">
                                                         <rect key="frame" x="187" y="0.0" width="166" height="250"/>
                                                     </imageView>
                                                 </subviews>
@@ -43,13 +51,14 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="76J-fa-pmu" userLabel="Button Stack View">
-                                                <rect key="frame" x="20" y="561.33333333333337" width="353" height="55"/>
+                                                <rect key="frame" x="20" y="572" width="353" height="55"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="270-kP-53v" userLabel="photoLibraryButton" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
                                                         <color key="backgroundColor" name="ButtonColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="사진 보관함">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Photo Library">
+                                                            <fontDescription key="titleFontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="20"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
@@ -60,7 +69,8 @@
                                                         <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
                                                         <color key="backgroundColor" name="ButtonColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="사진 찍기">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Camera">
+                                                            <fontDescription key="titleFontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="23"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
@@ -108,9 +118,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="RSP-68-tII" secondAttribute="leading" id="iFW-WJ-Wvw"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="imgView" destination="K24-ve-sEh" id="gON-dY-aJD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,28 +135,29 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEm-3X-SoU" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="684"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="변환 이미지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxa-Nj-Fwb">
-                                                <rect key="frame" x="128.33333333333331" y="55" width="136.33333333333331" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sketch Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxa-Nj-Fwb">
+                                                <rect key="frame" x="110.66666666666669" y="55" width="172" height="42"/>
+                                                <fontDescription key="fontDescription" name="DancingScript-Regular" family="Dancing Script" pointSize="35"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ov8-cG-z8p" userLabel="resultImageView">
-                                                <rect key="frame" x="20" y="111" width="353" height="500"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ov8-cG-z8p" userLabel="resultImageView" customClass="CustomImageView" customModule="PicToSketch" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="117" width="353" height="450"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="XvK-zP-ErL"/>
+                                                    <constraint firstAttribute="height" constant="450" id="XvK-zP-ErL"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i1E-YV-1Np" userLabel="ButtonStackView">
-                                                <rect key="frame" x="20" y="631" width="353" height="55"/>
+                                                <rect key="frame" x="20" y="587" width="353" height="55"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUT-x6-Dat" customClass="CustomButton" customModule="PicToSketch" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="55"/>
                                                         <color key="backgroundColor" name="ButtonColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="나가기">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Exit">
+                                                            <fontDescription key="titleFontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="23"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
@@ -160,7 +168,8 @@
                                                         <rect key="frame" x="186.66666666666663" y="0.0" width="166.33333333333337" height="55"/>
                                                         <color key="backgroundColor" name="ButtonColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="저장">
+                                                        <buttonConfiguration key="configuration" style="plain" title="Save">
+                                                            <fontDescription key="titleFontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="23"/>
                                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
@@ -219,8 +228,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="picExample.jpeg" width="1400" height="1750"/>
-        <image name="sketchExample.jpeg" width="1400" height="1750"/>
+        <image name="picExample2.jpg" width="3024" height="4032"/>
+        <image name="sketchExample2.jpeg" width="3024" height="4032"/>
         <namedColor name="BackgroundColor">
             <color red="0.14499999582767487" green="0.14499999582767487" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

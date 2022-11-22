@@ -13,5 +13,13 @@ class CustomButton: UIButton {
         super.layoutSubviews()
         
         layer.cornerRadius = 8
+        if self.isHighlighted == true {
+            self.layer.backgroundColor = UIColor.lightGray.cgColor
+            self.layer.borderWidth = 3
+            self.layer.borderColor = UIColor(named: "BackgroundColor")?.cgColor
+        } else {
+            self.layer.backgroundColor = UIColor(named: "ButtonColor")?.cgColor
+            self.layer.borderWidth = 0
+        }
     }
 }

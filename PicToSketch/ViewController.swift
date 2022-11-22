@@ -16,11 +16,10 @@ class ViewController: UIViewController {
     
     var resultImage: UIImage?
     var userInfo: [String: UIImage] = [:]
-        
-    @IBOutlet weak var imgView: UIImageView!
     
     @IBAction func photoLibraryButton(_ sender: UIButton) {
         print("ViewController - photoLibraryButton() clicked")
+        
         if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
             flagImageSave = false
             
