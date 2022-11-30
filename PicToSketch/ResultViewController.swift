@@ -41,11 +41,11 @@ class ResultViewController: UIViewController {
     
     @objc fileprivate func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            let ac = UIAlertController(title: "저장 실패", message: error.localizedDescription, preferredStyle: .alert)
+            let ac = UIAlertController(title: "Failed! 라이브러리 접근 권한을 확인해주세요.", message: error.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "저장 완료", message: "스케치 이미지가 카메라롤에 저장되었습니다.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saved!", message: "스케치 이미지가 라이브러리에 저장되었습니다.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }

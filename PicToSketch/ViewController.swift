@@ -7,6 +7,7 @@
 
 import UIKit
 import MobileCoreServices
+import Photos
 
 class ViewController: UIViewController {
         
@@ -19,44 +20,30 @@ class ViewController: UIViewController {
     
     @IBAction func photoLibraryButton(_ sender: UIButton) {
         print("ViewController - photoLibraryButton() clicked")
-        
-        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
-            flagImageSave = false
-            
-            imagePicker.delegate = self // ?? 아직 정확히 이해 못 함
-            imagePicker.sourceType = .photoLibrary // 소스 타입을 photoLibrary로 설정
-            imagePicker.mediaTypes = [kUTTypeImage as String] // 미디어 형태, MobileCoreServices에 정의되어 있다.
-            imagePicker.allowsEditing = false // 편집 허용 여부, true: 허용
-            imagePicker.modalPresentationStyle = .overFullScreen
-            
-            present(imagePicker, animated: true, completion: nil)
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
+            DispatchQueue.main.async {
+                self.openPhotoLibrary()
+            }
         } else {
-            myAlert("Photo album inaccessable", message: "Application cannot access the photo album.")
+            albumAuth()
         }
     }
     
     @IBAction func cameraButton(_ sender: UIButton) {
-        // 카메라를 사용할 수 있다면
-        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
-            flagImageSave = true // 사진 저장 플래그를 true로 설정
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.mediaTypes = [kUTTypeImage as String]
-            imagePicker.allowsEditing = false
-            imagePicker.navigationItem.leftBarButtonItem?.title
-            
-            
-            // 뷰 컨트롤러를 imagePicker로 대체
-            present(imagePicker, animated: true, completion: nil)
+        if AVCaptureDevice.authorizationStatus(for: .video) == AVAuthorizationStatus.authorized {
+            DispatchQueue.main.async {
+                self.openCamera()
+            }
         } else {
-            // 카메라를 사용할 수 없을 때 경고 창 출력
-            myAlert("Camera inaccessable", message: "Application cannot access the camera.")
+            cameraAuth()
+//            showAlertAuth("카메라")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
     }
 }
 
@@ -76,8 +63,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             if flagImageSave {
                 UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
             }
-            // 선택한 사진 이미지 뷰에 넣기
-//            imgView.image = MyOpenCV.toSketch(captureImage)
+
             resultImage = MyOpenCV.toSketch(captureImage)
             userInfo = ["ResultImage": resultImage!]
         }
@@ -107,5 +93,113 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
+    
 }
 
+extension ViewController {
+        /**
+        카메라 접근 권한 판별하는 함수
+        */
+       func cameraAuth() {
+           AVCaptureDevice.requestAccess(for: .video) { granted in
+               if granted {
+                   print("권한 허용")
+                   DispatchQueue.main.async {
+                       self.openCamera()
+                   }
+               } else {
+                   print("권한 거부")
+                   DispatchQueue.main.async {
+                       self.showAlertAuth("카메라")
+                   }
+               }
+           }
+       }
+       
+       /**
+        라이브러리 접근 권한 판별하는 함수
+        */
+       func albumAuth() {
+           switch PHPhotoLibrary.authorizationStatus() {
+           case .denied:
+               print("거부")
+               self.showAlertAuth("라이브러리")
+           case .authorized:
+               print("허용")
+               self.openPhotoLibrary()
+           case .notDetermined, .restricted:
+               print("아직 결정하지 않은 상태")
+               PHPhotoLibrary.requestAuthorization { state in
+                   if state == .authorized {
+                       self.openPhotoLibrary()
+                   } else {
+                       DispatchQueue.main.async {
+                           self.dismiss(animated: true, completion: nil)
+                       }
+                   }
+               }
+           default:
+               break
+           }
+       }
+       
+       /**
+        권한을 거부했을 때 띄어주는 Alert 함수
+        - Parameters:
+        - type: 권한 종류
+        */
+       func showAlertAuth(
+           _ type: String
+       ) {
+           if let appName = Bundle.main.infoDictionary!["CFBundleDisplayName"] as? String {
+               let alertVC = UIAlertController(
+                   title: "설정",
+                   message: "\(appName)이(가) \(type) 접근 허용되어 있지 않습니다. 사진 변환 기능을 사용하기 위해서는 \(type) 접근이 허용되어 있어야 합니다. 설정화면으로 이동하시겠습니까?",
+                   preferredStyle: .alert
+               )
+               let cancelAction = UIAlertAction(
+                   title: "취소",
+                   style: .cancel,
+                   handler: nil
+               )
+               let confirmAction = UIAlertAction(title: "이동하여 허가", style: .default) { _ in
+                   UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+               }
+               alertVC.addAction(cancelAction)
+               alertVC.addAction(confirmAction)
+               self.present(alertVC, animated: true, completion: nil)
+           }
+       }
+       
+       /**
+        아이폰에서 라이브러리에 접근하는 함수
+        */
+       private func openPhotoLibrary() {
+           if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary)) {
+               DispatchQueue.main.async {
+                   self.imagePicker.sourceType = .photoLibrary
+                   self.imagePicker.modalPresentationStyle = .currentContext
+                   self.imagePicker.mediaTypes = [kUTTypeImage as String] // 미디어 형태, MobileCoreServices에 정의되어 있다.
+                   self.imagePicker.allowsEditing = false
+                   self.present(self.imagePicker, animated: true, completion: nil)
+               }
+           } else {
+               print("라이브러리에 접근할 수 없습니다.")
+           }
+       }
+
+       /**
+        아이폰에서 카메라에 접근하는 함수
+        */
+       private func openCamera() {
+           if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+               self.imagePicker.sourceType = .camera
+               self.imagePicker.modalPresentationStyle = .currentContext
+               self.imagePicker.mediaTypes = [kUTTypeImage as String] // 미디어 형태, MobileCoreServices에 정의되어 있다.
+               self.imagePicker.allowsEditing = false
+               self.present(self.imagePicker, animated: true, completion: nil)
+           } else {
+               print("카메라에 접근할 수 없습니다.")
+           }
+       }
+}

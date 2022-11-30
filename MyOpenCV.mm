@@ -21,23 +21,10 @@ using namespace cv;
    
     UIImageToMat(image, imageMat);
     
+    // 사진이 흑백이면
     if(imageMat.channels() == 1) {
         cv::cvtColor(imageMat, imageMat, COLOR_GRAY2BGR);
     }
-   
-    // If the image was alread grayscale, return it
-//    if (imageMat.channels() == 1)
-//        return image;
-   
-
-    // Cartoon Image
-//    cv::Mat cartoonMat;
-//    cv::Mat cartoonMat_gray;
-//    cv::Mat cartoonMat_color;
-//    cv::detailEnhance(imageMat, cartoonMat, 10, 0.8);
-//    cv::pencilSketch(cartoonMat, cartoonMat_gray, cartoonMat_color, 10, 0.4, 0.02);
-//
-//    UIImage *resultImage = MatToUIImage(cartoonMat_color);
     
     // Sketch Image
     cv::Mat grayMat;

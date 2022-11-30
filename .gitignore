@@ -9,6 +9,7 @@
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
 Pods/OpenCV/opencv2.framework/Versions/A/opencv2
+appStore/
 
 ### Swift ###
 # Xcode
@@ -64,6 +65,7 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 # Pods/
+Pods/OpenCV/opencv2.framework/Versions/A/opencv2
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
 
