@@ -8,8 +8,12 @@
 import UIKit
 import MobileCoreServices
 import Photos
+import GoogleMobileAds
 
 class ViewController: UIViewController {
+    
+    // 광고
+    var bannerView: GADBannerView!
         
     // UIImagePickerController 인스턴스 생성
     let imagePicker: UIImagePickerController! = UIImagePickerController()
@@ -44,6 +48,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        // In this case, we instantiate the banner with desired ad size.
+        // 배너의 사이즈 설정
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        
+        // 광고 배너 아이디 설정
+        bannerView.adUnitID = "ca-app-pub-2709183664449693/2947552418"
+        bannerView.rootViewController = self
+        
+        // 광고 로드
+        bannerView.load(GADRequest())
+        
+        // 델리겟을 배너뷰에 연결
+        bannerView.delegate = self
     }
 }
 
@@ -202,4 +220,56 @@ extension ViewController {
                print("카메라에 접근할 수 없습니다.")
            }
        }
+}
+
+
+// 배너뷰 관련
+extension ViewController: GADBannerViewDelegate {
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+        // 화면에 배너뷰 추가
+        
+        addBannerViewToView(bannerView)
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
 }
