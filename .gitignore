@@ -111,5 +111,8 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods
 
+PicToSketch/Info.plist
+
 # mac
 .DS_Store
+PicToSketch/DS_Store
