@@ -85,25 +85,27 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             resultImage = MyOpenCV.toSketch(captureImage)
             userInfo = ["ResultImage": resultImage!]
         }
-        
+
         // 화면 닫기
         self.dismiss(animated: true, completion: nil)
 
         if let resultVC = self.storyboard?.instantiateViewController(identifier: "ResultViewController"){
             // Notification Center
+            resultVC.modalTransitionStyle = .crossDissolve
+            resultVC.modalPresentationStyle = .fullScreen
             self.present(resultVC, animated: true) { [weak self] in
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "imageNotification"), object: nil, userInfo: self?.userInfo)
             }
         }
     }
 
-    
+
     // 촬영이나 선택 취소했을 때
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // 이미지 피커 제거
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     // 경고 창 츨력
     func myAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -133,7 +135,7 @@ extension ViewController {
                }
            }
        }
-       
+    
        /**
         라이브러리 접근 권한 판별하는 함수
         */
@@ -160,7 +162,7 @@ extension ViewController {
                break
            }
        }
-       
+
        /**
         권한을 거부했을 때 띄어주는 Alert 함수
         - Parameters:
